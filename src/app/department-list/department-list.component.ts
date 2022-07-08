@@ -31,7 +31,7 @@ export class DepartmentListComponent implements OnInit {
   
   function1(department:any){
     
-    let id = this.route.navigate(['/department',department.id]);
+    this.route.navigate(['/department',department.id]);
 
   }
 
