@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
     </p>
     <p><a (click)="getPrevious()">Previous</a></p>
     <p><a (click)="getNext()">Next</a></p>
+    <button (click)="getOptional()">Back</button>
   `,
   styles: [
   ]
@@ -38,6 +39,11 @@ export class DepartmentDetailComponent implements OnInit {
     let previousId = this.departmentId - 1;
     
     this.router.navigate(['/department',previousId]);
+  }
+  
+  getOptional(){
+    let selectedId = this.departmentId?this.departmentId:null;
+    this.router.navigate(['/department',{'id':selectedId}]);
   }
 
 }
